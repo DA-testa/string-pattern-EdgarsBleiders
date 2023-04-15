@@ -11,7 +11,7 @@ def read_input():
     
     if type == "F":
         file = input().rstrip()
-        with open (file, 'r') as f:
+        with open ("tests/" + file, 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
             return (pattern, text)
