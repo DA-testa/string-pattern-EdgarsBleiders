@@ -16,12 +16,15 @@ def read_input():
                 text = f.readline().rstrip()
                 return (pattern, text)
     except EOFError:
-        return None
+        return ("", "")
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, text):
+    if pattern is None or text is None:
+        return []
+        
     occurr = []
     P = len(pattern)
     T = len(text)
