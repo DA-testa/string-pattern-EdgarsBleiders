@@ -11,7 +11,7 @@ def read_input():
     
     if type == "F":
         file = input().rstrip()
-        with open ("tests/" + file, 'r') as f:
+        with open (file, 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
             return (pattern, text)
@@ -47,11 +47,12 @@ def get_occurrences(pattern, text):
             current_hash = (current_hash + Q) % Q
 
 
-    return occurr        
+    
+    return occurr
 
 
 
 # this part launches the functions
 if __name__ == '__main__':
-    print_occurrences(get_occurrences(*read_input()))
-
+    occurr = get_occurrences(*read_input())
+    print_occurrences(occurr)
