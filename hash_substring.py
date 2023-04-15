@@ -2,7 +2,7 @@
 
 def read_input():
     type = input().rstrip()
-
+#a
     if type == "I":
         pattern = input().rstrip()
         text = input().rstrip()
