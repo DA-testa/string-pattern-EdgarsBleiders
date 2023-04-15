@@ -48,7 +48,7 @@ def get_occurrences(pattern, text):
 
         if i < T - P:
             current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[i+P])) % Q
-#a
+#azzzz
     return occurr
 
 
