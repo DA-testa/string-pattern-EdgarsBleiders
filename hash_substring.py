@@ -24,7 +24,7 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     if pattern is None or text is None:
         return []
-        
+
     occurr = []
     P = len(pattern)
     T = len(text)
@@ -48,7 +48,6 @@ def get_occurrences(pattern, text):
 
         if i < T - P:
             current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[i+P])) % Q
-            current_hash = (current_hash + Q) % Q
 
     return occurr
 
