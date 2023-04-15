@@ -1,8 +1,7 @@
 # python3
 
 def read_input():
-    # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
-    type = input().rstrip()
+    type = input()
 
     if type == "I":
         pattern = input().rstrip()
@@ -10,14 +9,13 @@ def read_input():
         return (pattern, text)
     
     if type == "F":
-        file = input().rstrip()
+        file = input()
         with open (file, 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
             return (pattern, text)
 
 def print_occurrences(output):
-    # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, text):
@@ -46,13 +44,9 @@ def get_occurrences(pattern, text):
             current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[i+P])) % Q
             current_hash = (current_hash + Q) % Q
 
-
-    
     return occurr
 
 
 
-# this part launches the functions
 if __name__ == '__main__':
-    occurr = get_occurrences(*read_input())
-    print_occurrences(occurr)
+    print_occurrences(get_occurrences(*read_input()))
