@@ -29,7 +29,7 @@ def get_occurrences(pattern, text):
     P = len(pattern)
     T = len(text)
 
-    if T<P:
+    if T < P:
         return []
     
     Q = 256
@@ -48,7 +48,7 @@ def get_occurrences(pattern, text):
 
         if i < T - P:
             current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[i+P])) % Q
-#aasd
+#a
     return occurr
 
 
