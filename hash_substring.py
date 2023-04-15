@@ -1,7 +1,7 @@
 # python3
 
 def read_input():
-    type = input()
+    type = input().rstrip()
 
     if type == "I":
         pattern = input().rstrip()
@@ -9,7 +9,7 @@ def read_input():
         return (pattern, text)
     
     if type == "F":
-        file = input()
+        file = input().rstrip()
         with open (file, 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
