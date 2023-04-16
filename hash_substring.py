@@ -23,8 +23,11 @@ def get_occurrences(pattern, text):
         return []
 
     occurr = []
-    P = len(pattern)
+
     T = len(text)
+    
+    P = len(pattern)
+    
 
     if T < P:
         return []
