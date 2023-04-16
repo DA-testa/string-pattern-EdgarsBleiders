@@ -1,22 +1,19 @@
 # python3
 
 def read_input():
-    try:
-        type = input().rstrip()
+    type = input().rstrip()
 
-        if type == "I":
-            pattern = input().rstrip()
-            text = input().rstrip()
+    if type == "I":
+        pattern = input().rstrip()
+        text = input().rstrip()
+        return (pattern, text)
+    
+    if type == "F":
+        file = input().rstrip()
+        with open (file, 'r') as f:
+            pattern = f.readline().rstrip()
+            text = f.readline().rstrip()
             return (pattern, text)
-        
-        if type == "F":
-            file = input().rstrip()
-            with open (file, 'r') as f:
-                pattern = f.readline().rstrip()
-                text = f.readline().rstrip()
-                return (pattern, text)
-    except EOFError:
-        return ("", "")
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
@@ -48,6 +45,7 @@ def get_occurrences(pattern, text):
 
         if i < T - P:
             current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[P+i])) % Q
+    
     return occurr
 
 
