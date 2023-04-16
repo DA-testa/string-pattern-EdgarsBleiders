@@ -9,8 +9,7 @@ def read_input():
         return (pattern, text)
     
     if type == "F":
-        file = input().rstrip()
-        with open (file, 'r') as f:
+        with open ("tests/06", 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
             return (pattern, text)
@@ -25,9 +24,7 @@ def get_occurrences(pattern, text):
     occurr = []
 
     T = len(text)
-    
     P = len(pattern)
-    
 
     if T < P:
         return []
