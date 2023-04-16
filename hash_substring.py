@@ -40,15 +40,14 @@ def get_occurrences(pattern, text):
         pattern_hash = (pattern_hash * B + ord(pattern[i])) % Q
         current_hash = (current_hash * B + ord(text[i])) % Q
 
-    for i in range(T - P + 1):
+    for i in range(1 + T - P):
         if pattern_hash == current_hash:
             if pattern == text[i:i+P]:
                 occurr.append(i)
         
 
         if i < T - P:
-            current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[i+P])) % Q
-#azzzz
+            current_hash = (B * (current_hash - ord(text[i]) * pow(B, P-1, Q)) + ord(text[P+i])) % Q
     return occurr
 
 
